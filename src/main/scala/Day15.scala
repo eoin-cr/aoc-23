@@ -14,13 +14,6 @@ object Day15:
         case Nil if acc == Nil => List((s, newVal))
         case Nil => ((s, newVal) :: acc).reverse
 
-    @tailrec
-    def removeFromList(s: String, lst: List[(String, Int)], acc: List[(String, Int)]=List()): List[(String, Int)] =
-      lst match
-        case x :: xs if x(0) == s => acc.reverse ::: xs
-        case x :: xs => removeFromList(s, xs, x :: acc)
-        case Nil => acc.reverse
-
     val map: Map[Int, List[(String, Int)]] = Map().withDefaultValue(List())
 
     str.split(',')
@@ -32,5 +25,5 @@ object Day15:
         else
           val label = s.split("-")(0)
           val labelHash = calculateHash(label)
-          m + (labelHash -> removeFromList(label, m(labelHash)))
+          m + (labelHash -> m(labelHash).filter(_(0) != label).toList)
       }.map((k, v) => v.foldLeft((1, 0))((l, r) => (l(0) + 1, l(1) + (k + 1) * r(1) * l(0)))(1)).sum
