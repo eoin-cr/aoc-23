@@ -1,9 +1,2 @@
-## sbt project compiled with Scala 3
-
-### Usage
-
-This is a normal sbt project. You can compile code with `sbt compile`, run it with `sbt run`, and `sbt console` will start a Scala 3 REPL.
-
-For more information on the sbt-dotty plugin, see the
-[scala3-example-project](https://github.com/scala/scala3-example-project/blob/main/README.md).
-# eoin-cr/aoc-23
+# AOC 2023
+I will be trying to code my solutions entirely through functional programming in Scala this year. Writing in a purely functional style will take preference over performance, hence why some of the programs may not be as efficient as possible
