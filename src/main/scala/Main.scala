@@ -15,7 +15,7 @@
 //  println(Day15.soln1("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7"))
 //  println(Day15.soln1("cm"))
 //  println(Day15.soln1(Utils.readFileFirstLineAsString("d15.txt")))
-//  println(Day15.soln2(Utils.readFileFirstLineAsString("d15.txt")))
-  println(Day15.soln2("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7"))
+  println(Day15.soln2(Utils.readFileFirstLineAsString("d15.txt")))
+//  println(Day15.soln2("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7"))
 
 def msg = "I was compiled by Scala 3. :)"
