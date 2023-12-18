@@ -1,14 +1,12 @@
 object Day9:
-  def calculateNext(st: List[Int]): BigInt =
-    def helper(st:List[Int]): BigInt =
-      val diff = st.sliding(2).map(x => x.head-x(1)).toList
-      diff match
-        case _ if diff.forall(_ == 0) => st.head + 0
-        case _ => st.head + helper(diff)
-
-    // do our calculation reversed to avoid a bunch of .last calls
-    helper(st.reverse)
+  def calculateNew(st: List[Int], f: List[Int] => Int, g: (Int, BigInt) => BigInt): BigInt =
+    val diff = st.sliding(2).map(x => f(x)).toList
+    diff match
+      case _ if diff.forall(_ == 0) => st.head
+      case _ => g(st.head, calculateNew(diff, f, g))
 
   def soln1(lst: List[String]): BigInt =
-//    lst.foldLeft(0)((l, r) => l + calculateNext(r.split(" ").toList.map(_.toInt)))
-    lst.map(x => calculateNext(x.split(" ").toList.map(_.toInt))).sum
+    lst.foldLeft(0: BigInt)((l, r) => l + calculateNew(r.split(" ").toList.map(_.toInt).reverse, x => x.head-x(1), _ + _))
+
+  def soln2(lst: List[String]): BigInt =
+    lst.foldLeft(0: BigInt)((l, r) => l + calculateNew(r.split(" ").toList.map(_.toInt), x => x(1) - x.head, _ - _))
