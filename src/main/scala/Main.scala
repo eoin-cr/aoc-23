@@ -15,13 +15,18 @@
 //  println(Day4.soln1(Utils.readFileAsList("test.txt")))
 //  println(Day4.soln1(Utils.readFileAsList("d4.txt")))
 //  println(Day9.soln1(Utils.readFileAsList("test.txt")))
-  println(Day9.soln1(Utils.readFileAsList("d9.txt")))
+//  println(Day9.soln1(Utils.readFileAsList("d9.txt")))
 //  println(Day9.soln2(Utils.readFileAsList("test.txt")))
-  println(Day9.soln2(Utils.readFileAsList("d9.txt")))
+//  println(Day9.soln2(Utils.readFileAsList("d9.txt")))
 //  println(Day15.soln1("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7"))
 //  println(Day15.soln1("cm"))
 //  println(Day15.soln1(Utils.readFileFirstLineAsString("d15.txt")))
 //  println(Day15.soln2(Utils.readFileFirstLineAsString("d15.txt")))
 //  println(Day15.soln2("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7"))
+//  println(Day24.soln1(Utils.readFileAsList("test.txt")))
+  val t1 = System.nanoTime
+  println(Day24.soln1(Utils.readFileAsList("d24.txt")))
+  val duration = (System.nanoTime - t1) / 1e9d
+  println(s"${duration}s")
 
 def msg = "I was compiled by Scala 3. :)"
